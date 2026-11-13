@@ -1,0 +1,202 @@
+.theme-dark:not(html.custom-theme-background) {
+    --custom-app-top-bar-height: 22px;
+}
+
+.platform-web, .platform-linux {
+    .theme-dark:not(html.custom-theme-background) {
+        --custom-app-top-bar-height: 0px;
+    }
+    [class*="base_"] {
+        --trailing-width1: 0px;
+        --trailing-width2: 0px;
+        --trailing-width3: 0px;
+        --trailing-width4: 0px;
+        --trailing-width5: 0px;
+        grid-template-areas: "titleBar titleBar titleBar" "notice notice notice" "guildsList channelsList page";
+        grid-template-rows: [top] 0px [titlebarEnd] min-content [page] 0px [end];
+        [class*="sidebar_"] {
+            display: grid;
+            grid-template-areas: "guilds sidebar" "guilds panels";
+            grid-template-columns: [start] min-content [sidebarStart] unset [end];
+            grid-template-rows: [start] 1fr [panelsStart] min-content [end];
+            width: 310px !important;
+            border-radius: 0;
+        }
+
+        [class*="sidebar_"] > [class*="guilds_"] {
+            border-top: 1px solid var(--border-muted);
+            padding-top: 10px;
+            grid-area: guilds;
+            margin-bottom: 0;
+        }
+
+        [class*="sidebar_"] > [class*="sidebarList_"] {
+            grid-area: sidebar;
+            --custom-app-panels-height: 0;
+        }
+    }
+    [class*="bar_"] [class*="trailing_"] {
+        top: 25px;
+        gap: 8px;
+        padding-right: 8px;
+        z-index: 102;
+    }
+}
+
+[class*="backForwardButtons_"], [class*="title_"] > [class*="title_"] {
+    display: none;
+}
+
+[class*="sidebarListRounded_"] {
+    border-start-start-radius: 0px;
+}
+
+[class*="chatLayerWrapper_"] > [class*="floating_"] {
+    border-top: 1px solid var(--border-muted);
+    border-start-start-radius: 0px;
+}
+
+[class*="chatLayerWrapper_"] [class*="toolbar_"] {
+    margin-right: 0px;
+}
+
+[class*="activityPanel_"] {
+    border-start-start-radius: 0px;
+    border-start-end-radius: 0px;
+    background: none;
+}
+
+[class*="base_"] {
+    --trailing-width1: 0px;
+    --trailing-width2: 0px;
+    --trailing-width3: 0px;
+    --trailing-width4: 0px;
+    --trailing-width5: 0px;
+    grid-template-areas: "titleBar titleBar titleBar" "notice notice notice" "guildsList channelsList page";
+    grid-template-rows: [top] 0px [titlebarEnd] min-content [page] 22px [end];
+    [class*="sidebar_"] {
+        display: grid;
+        grid-template-areas: "guilds sidebar" "guilds panels";
+        grid-template-columns: [start] min-content [sidebarStart] unset [end];
+        grid-template-rows: [start] 1fr [panelsStart] min-content [end];
+        width: 310px !important;
+        border-radius: 0;
+    }
+
+    [class*="sidebar_"] > [class*="guilds_"] {
+        border-top: 1px solid var(--border-muted);
+        padding-top: 10px;
+        grid-area: guilds;
+        margin-bottom: 0;
+    }
+
+    [class*="sidebar_"] > [class*="sidebarList_"] {
+        grid-area: sidebar;
+        --custom-app-panels-height: 0;
+    }
+}
+
+[class*="toolbar_"]:has([class*="returnButton_"]) {
+    margin-right: 76px;
+}
+
+[class*="panels_"] {
+    grid-area: panels;
+    position: static;
+    width: calc(var(--custom-guild-sidebar-width) - 72px);
+    inset: auto;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-right-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border-top: 1px solid var(--border-muted);
+    .avatar__37e49 .wrapper__44b0c {
+        width: 32px !important;
+        height: 32px !important;
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+[class*="search_"] {
+    width: auto;
+    [class*="searchBar_"] {
+        padding: 0 2px;
+        height: 24px;
+        width: 144px;
+        border-radius: 4px;
+        border: none;
+        background: var(--background-mod-subtle);
+        border-bottom: unset;
+        box-shadow: var(--elevation-low);
+        .DraftEditor-root {
+            padding: 2px 0;
+            line-height: 20px;
+        }
+        [class*="contents_"] {
+            width: 100%;
+            color: var(--text-muted);
+            text-align: left;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            white-space: nowrap;
+        }
+    }
+}
+
+[class*="bar_"] [class*="trailing_"] {
+    top: 36px;
+    gap: 8px;
+    padding-right: 8px;
+    z-index: 102;
+}
+
+[class*="winButtons_"] {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    gap: 0px;
+    [class*="winButton_"] {
+        width: calc(var(--custom-app-top-bar-height) + 4px); 
+    }
+}
+
+#channelTabs-settingsMenu {
+    position: relative;
+    right: 20px;
+}
+
+[class*="winButtonsWithDivider_"]:before {
+    border: unset;
+}
+
+[class*="bar_"] .channelTabs-trailing [class*="trailing_"] {
+    top: 14px;
+    right: 10px;
+}
+
+[class*="base_"]:has(.iconForeground_f1f2b1) {
+    --trailing-width1: 32px;
+}
+[class*="base_"]:has(path[d="M12 2a1 1 0 0 1 1 1v10.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V3a1 1 0 0 1 1-1ZM3 20a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3Z"]) {
+    --trailing-width2: 32px;
+}
+[class*="base_"]:has(a[href="https://support.discord.com"]) {
+    --trailing-width3: 32px;
+}
+[class*="base_"]:has(path[d="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H5ZM4 5.5C4 4.67 4.67 4 5.5 4h13c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5h-2.65c-.5 0-.85.5-.85 1a3 3 0 1 1-6 0c0-.5-.35-1-.85-1H5.5A1.5 1.5 0 0 1 4 11.5v-6Z"]) {
+    --trailing-width4: 32px;
+}
+[class*="base_"]:has(.clickable__81391[aria-label="DevTools"]) {
+    --trailing-width5: 32px;
+}
+
+[class*="toolbar_"] {
+    margin-right: calc(var(--trailing-width1) + var(--trailing-width2) + var(--trailing-width3) + var(--trailing-width4) + var(--trailing-width5));
+}
